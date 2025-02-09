@@ -4,7 +4,7 @@ class ApiController < ApplicationController
   end
 
   def place
-    render json: Place.includes(:place_reviews).where(params[:place_id]).first
+    render json: Place.includes(:place_reviews).where(id: params[:place_id]).first
   end
 
   def add_review
